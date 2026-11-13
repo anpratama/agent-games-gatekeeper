@@ -1,0 +1,15 @@
+[Unit]
+Description=Cloudflare quick tunnel for Gatekeeper agent
+After=network-online.target gatekeeper-agent.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/cloudflared tunnel --no-autoupdate --url http://localhost:8080
+Restart=always
+RestartSec=5
+StandardOutput=append:/var/log/gatekeeper-tunnel.log
+StandardError=append:/var/log/gatekeeper-tunnel.log
+
+[Install]
+WantedBy=multi-user.target

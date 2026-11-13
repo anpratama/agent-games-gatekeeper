@@ -1,0 +1,1 @@
+{"name":"gatekeeper-agent","version":"0.1.0","private":true,"type":"commonjs","scripts":{"start":"node src/index.js","test":"node --test test/decide.test.js"},"dependencies":{"snarkjs":"^0.7.5"}}

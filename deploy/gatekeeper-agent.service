@@ -1,0 +1,16 @@
+[Unit]
+Description=Agent Games — Proof Gatekeeper agent
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/gatekeeper-agent
+EnvironmentFile=/opt/gatekeeper-agent/.env
+ExecStart=/usr/bin/node src/index.js
+Restart=always
+RestartSec=3
+# The agent must never sleep: scored rounds run 17:30–03:30 WIB daily.
+
+[Install]
+WantedBy=multi-user.target
