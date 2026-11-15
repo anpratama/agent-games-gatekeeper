@@ -20,7 +20,7 @@ npm test   # 10 decision-logic tests (all 7 trap types + edges)
 ## Files
 - `src/decide.js` — deterministic trap checks (pure, unit-tested)
 - `src/index.js` — HTTP transport, HMAC, seen-set persistence, idempotency
-- `src/proof.js` — Groth16 proof module (calibration pending, see SPEC.md)
+- `src/proof.js` — Groth16 proof module (witness format reverse-engineered from the official circuit artifacts and verified against the official VK, 2026-11-15; live behind PROOF_ENABLED=1)
 - `circuits/` — official gatekeeper.wasm / gatekeeper_final.zkey (hashes in SPEC.md)
 - `SPEC.md` — full extracted platform spec + known gaps
 - `deploy/` — systemd unit for the always-on VPS deployment
